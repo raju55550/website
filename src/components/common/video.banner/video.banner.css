@@ -1,0 +1,29 @@
+.heading12 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 63px;
+    text-align: center;
+    color: #0f3b3d;
+}
+.heading13 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #0f3b3d;
+}
+.icon-play {
+    /* position: absolute; */
+    width: 89px;
+    height: 89px;
+    background: #ffffff;
+    border: 1px solid #01babf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}

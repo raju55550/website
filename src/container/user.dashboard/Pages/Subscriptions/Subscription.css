@@ -1,0 +1,141 @@
+.payment{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+/* identical to box height */
+
+letter-spacing: -0.03em;
+
+color: #000000;
+
+}
+
+
+
+.currentplan{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+letter-spacing: -0.03em;
+
+color: #757575;
+
+}
+
+.pro{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 80px;
+    /* identical to box height, or 267% */
+    
+    letter-spacing: -0.03em;
+    
+    color: #000000;
+    
+}
+
+.text-muted{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.03em;
+    
+    color: #263238;
+}
+
+.nextpayment{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 22px;
+letter-spacing: -0.03em;
+
+color: #737D82;
+}
+
+.rmvbtn{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.03em;
+
+color: #574D68;
+}
+
+.subscription
+{height: 58px;
+    width: 249px;
+  
+    border-radius: 10px;
+    
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+    border: none;
+    color: #574D68;
+}
+
+.upgrade{
+    height: 58px;
+    width: 249px;
+  
+    border-radius: 10px;
+    
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+border: none;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+    background: #01BABF;
+border-radius: 10px;
+    color: #fff; 
+}
+
+.rmvbtn{
+    width: 57px;
+height: 58px;
+
+border: none;
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 20px;
+background-color: white;
+align-items: center;
+text-align: center;
+letter-spacing: -0.03em;
+
+color: #574D68;
+
+}
+
+
+.dashboard-container {
+    background-color: #efefef !important;
+    height: 132vh !important;
+}

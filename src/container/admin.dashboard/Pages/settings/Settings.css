@@ -1,0 +1,423 @@
+.dashboard-container {
+    background-color: #efefef !important;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+
+.login {
+    height: 100vh;
+}
+.d-flex {
+    display: -webkit-box!important;
+    display: -ms-flexbox;
+    /* display: flex!important; */
+}
+
+.justify-content-end {
+    -webkit-box-pack: start!important;
+    -ms-flex-pack: end!important;
+    /* justify-content: flex-end!important; */
+}
+.label {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333333;
+}
+.input {
+  margin-left: 84px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 14px;
+  gap: 14px;
+  width: 63%;
+  height: 40px;
+  background: #f8f8f8;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #757575;
+}
+.login-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 14px;
+    background: #048a8f;
+    border: 1px solid #01babf;
+    border-radius: 4px;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+    width: 100%;
+    margin-top: -37px;
+    margin-left: 313px;
+
+}
+.forgot-password {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-decoration-line: underline;
+    color: #048a8f;
+    cursor: pointer;
+}
+.text {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #333333;
+}
+.text-2 {
+    color: #048a8f;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.login-icons {
+    width: 47.81px;
+    height: 47.81px;
+    background: #f2f2f2;
+    border-radius: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .react-tabs {
+    display: flex;
+    margin-left: 1px;
+    /* border: 1px solid #3c3e43; */
+    color: white;
+    /* background: #1c1d1f; */
+    background: #EFEFEF;
+  }
+  
+  .react-tabs__tab-list {
+    display: flex;
+    flex-direction: column;
+    width: 263px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: #EFEFEF;
+    
+  }
+  .label{}
+
+  
+
+    .react-tabs__tab {
+           /* height: 70px; */
+    /* list-style: none; */
+    /* padding: 7px 1px; */
+    cursor: pointer;
+    color: #bbb;
+    padding: 35px 4px 12px 8px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #5B5B5B;
+}
+
+.bg-slate {
+    background-color: #EFEFEF;
+}
+  .react-tabs__tab--selected {
+    background: #EFEFEF;
+    border-color: #1c1d1f;
+    border-left: 4px solid #6eb800;
+    color: white;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 22px;
+display: flex;
+align-items: center;
+
+color: #048A8F;
+  }
+  
+  .react-tabs__tab-panel {
+    display: none;
+    width: 300px;
+  }
+  
+  .react-tabs__tab-panel--selected {
+    display: block;
+  }
+  
+  .react-tabs__tab {
+    padding-left: 0px;
+  }
+  
+  .react-tabs__tab--selected {
+    padding-left: 0px;
+  }
+  
+  .panel-content {
+    text-align: center;
+  }
+  
+
+  .settings {
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 37px;
+line-height: 51px;
+
+color: #2E392F;
+  }
+
+  .settingsub{
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 27px;
+
+color: #525A53;
+  }
+
+
+
+.alignicon{
+  margin-left: 57px;
+}
+
+.alignicon1
+{
+  margin-left: 35px;
+}
+
+.alignicon2{
+  margin-left: 1px;
+
+}
+
+.aligntxt1{
+  margin-left: -167px;
+}
+
+.edtprofilepopup{
+  margin-top: -103px;
+}
+
+
+.popupcss{
+  margin-top: -83px;
+
+}
+
+.vectcss{
+  margin-left: 101px;
+}
+
+.newemaillabel {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  margin-left: -116px;
+}
+
+.changeemaillabel {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  margin-left: -63px;
+}
+
+.oldpwdlabel {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  margin-left: -159px;
+}
+
+
+
+.newpwdlabel {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  margin-left: -152px;
+}
+
+.cnfnpwdlabel {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  margin-left: -95px;
+}
+
+.profile-head {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 37px;
+  line-height: 51px;
+  text-align: center;
+  
+  color: #2E392F;
+}
+
+.selectcss{
+
+  
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 14px;
+gap: 14px;
+width: 350px;
+height: 40px;
+border: 1px solid #D8D8D8;
+border-radius: 4px;
+}
+
+.langalign{
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  
+  margin-left: -342px;
+  color: #333333;
+}
+
+
+.profnbtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 7px 14px;
+  background: #048a8f;
+  border: 1px solid #01babf;
+  border-radius: 4px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  width: 30%;
+  margin-left: 283px;
+}
+
+.profnbtn1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 7px 14px;
+  background: #048a8f;
+  border: 1px solid #01babf;
+  border-radius: 4px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  width: 30%;
+  margin-left: 200px;
+}
+
+.action_btn {
+  width: 200px;
+  margin: 0 auto;
+  display: inline;}
+
+  
+  .buttons {
+    width: 200px;
+    margin: 0 auto;
+    display: inline;}
+
+
+.cancelbtn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-left: -46px;
+}
+
+
+
+.email-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 14px;
+  background: #048a8f;
+  border: 1px solid #01babf;
+  border-radius: 4px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  width: 100%;
+  margin-top: -37px;
+  margin-left: 290px;
+}

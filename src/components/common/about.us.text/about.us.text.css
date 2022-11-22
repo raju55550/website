@@ -1,0 +1,67 @@
+.head1 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    color: #01babf;
+}
+.head2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    color: #0f3b3d;
+    line-height: 68px;
+
+}
+.head3 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3a3f45;
+}
+
+.btn3 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #01babf;
+    border: 2px solid #01babf;
+    border-radius: 47px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+
+}
+
+.btnalign{
+    position: absolute;
+    width: 173px;
+    height: 46px;
+}
+
+
+
+.wid{
+    width: 100%;
+}
+
+.leftdiv{
+    width: 50%; 
+    height: 100px; 
+    float: left;
+
+}
+
+.rightdiv{
+    margin-left: 50%; height: 100px; 
+}
+
+p {
+    margin-bottom: 0rem !important;
+}

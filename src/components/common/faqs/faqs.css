@@ -1,0 +1,94 @@
+.faqs {
+    background: #fcfcff;
+}
+.css-smkl36-MuiCollapse-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin: 0px 0px 22px -22px !important;
+}
+.faq-head1 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 57px;
+    color: #2e392f;
+    padding: 0px 2px 0px 75px;
+}
+.res-faq-head1 {
+    font-size: 25px !important;
+    line-height: 25px !important;
+}
+.faq-head2 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #525a53;
+   
+    padding: 0px 2px 0px 76px;
+}
+
+
+
+.btn2 {
+
+    
+    width: 181px !important;
+    height: 51px !important;
+    left: calc(50% - 217px/2 - 8.5px);
+    top: calc(50% - 60px/2);
+
+    color: #FFFFFF !important;
+    height: 40px;
+    border-radius: 47px !important;
+    text-transform: none !important;
+    background-color: #01BABF !important;
+    
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 30px;
+    /* or 176% */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+  
+    border-radius: 47px;
+    margin: 0px 0px 0px 76px;
+    border: white;
+}
+
+
+.btn2:hover {
+    background: #038f94;
+}
+
+.w-font{
+
+    font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 25px;
+display: flex;
+align-items: center;
+
+color: #2E392F;
+}
+
+

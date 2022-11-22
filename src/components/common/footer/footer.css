@@ -1,0 +1,34 @@
+.links {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #2e392f;
+}
+.heads {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #2e392f;
+}
+.icons {
+    background-color: #fff;
+    width: 33px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.copyright {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    color: #2e392f;
+}
