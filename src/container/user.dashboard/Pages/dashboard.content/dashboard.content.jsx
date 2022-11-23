@@ -204,7 +204,7 @@ const DashboardContent = () => {
                     textAlign: 'end',
                   }}
                 >
-                  /1GB
+                  userInfo?.videosLeft/{dataPlan.videosAllowed}
                 </strong>
               </div>
             </Grid>
@@ -224,7 +224,7 @@ const DashboardContent = () => {
                     fontSize: '18px',
                   }}
                 >
-                  Audio remaining
+                  Storage remaining
                 </strong>
                 <div
                   style={{
@@ -239,7 +239,16 @@ const DashboardContent = () => {
                       datasets: [
                         {
                           label: '# of Votes',
-                          data: [userInfo?.videosLeft, dataPlan.videosAllowed],
+                          data: [
+                            parseInt(
+                              userInfo?.storageLeft &&
+                                userInfo?.storageLeft.split(' ')[0]
+                            ),
+                            parseInt(
+                              dataPlan?.storageAllowed &&
+                                dataPlan?.storageAllowed.split(' ')[0]
+                            ),
+                          ],
                           backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -260,7 +269,7 @@ const DashboardContent = () => {
                     textAlign: 'end',
                   }}
                 >
-                  /1GB
+                  {userInfo?.storageLeft}/{dataPlan?.storageAllowed}
                 </strong>
               </div>
             </Grid>
