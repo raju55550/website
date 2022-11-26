@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import './PaymentHistory.css';
+import { API_BASE_URL } from '../../../../utils/globals';
 
 const PaymentHistory = () => {
   const [payments, setPayments] = React.useState([]);
@@ -11,18 +12,15 @@ const PaymentHistory = () => {
   const inputRef = React.useRef();
 
   const getAllPayments = async () => {
-    const { data } = await axios('http://localhost:5000/transactions');
+    const { data } = await axios(`${API_BASE_URL}/transactions`);
     setPayments(data?.transactions);
   };
 
   const fetchLatest = async () => {
-    const { data } = await axios.post(
-      'http://localhost:5000/transactions/all',
-      {
-        startDate,
-        endDate,
-      }
-    );
+    const { data } = await axios.post(`${API_BASE_URL}/transactions/all`, {
+      startDate,
+      endDate,
+    });
 
     setPayments(data.filteredTransactions);
   };
@@ -40,14 +38,9 @@ const PaymentHistory = () => {
     }
   }, [endDate, startDate]);
 
-  
   return (
     <div className='pt-16 pb-10 ml-12'>
-    
-    
-   
       <div className='flex flex-row '>
-    
         <input
           type='text'
           placeholder='Search'
@@ -84,9 +77,7 @@ const PaymentHistory = () => {
         ) : (
           ''
         )}
-         
       </div>
-
 
       <h1 className='my-8'>Transaction</h1>
       <div className='flex items-center justify-center h-fit'>
@@ -138,7 +129,6 @@ const PaymentHistory = () => {
                   );
                 })}
             </tbody>
-            
           </table>
         </div>
       </div>

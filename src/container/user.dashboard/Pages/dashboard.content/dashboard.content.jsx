@@ -9,10 +9,13 @@ import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
 import ReactSpeedometer from 'react-d3-speedometer';
 
 import { Doughnut } from 'react-chartjs-2';
+import { API_BASE_URL } from '../../../../utils/globals';
+import { useNavigate } from 'react-router-dom';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DashboardContent = () => {
+  const navigate = useNavigate();
   const [dataPlan, setDataPlan] = useState({});
 
   const [userInfo, setUserInfo] = useState(null);
@@ -23,7 +26,8 @@ const DashboardContent = () => {
   }
 
   const getUserInfo = async () => {
-    const { data } = await axios('http://localhost:5000/auth/check');
+    console.log('Working');
+    const { data } = await axios(`${API_BASE_URL}/auth/check`);
     setUserInfo(data.user);
     setDataPlan(data.plan);
   };
@@ -31,86 +35,6 @@ const DashboardContent = () => {
   useEffect(() => {
     getUserInfo();
   }, []);
-
-  // const userData = {
-  //   labels: [`Videos Left ${userInfo?.videosLeft}`],
-  //   datasets: [
-  //     {
-  //       label: `Videos Left ${userInfo?.videosLeft}`,
-  //       data: [userInfo?.videosLeft],
-  //       backgroundColor: ['#842eaf'],
-  //       borderColor: 'black',
-  //       borderWidth: 2,
-  //     },
-  //   ],
-  // };
-
-  // const userData2 = {
-  //   labels: [`Storage Left ${userInfo?.storageLeft}`],
-  //   datasets: [
-  //     {
-  //       label: `Storage Left ${userInfo?.storageLeft}`,
-  //       data: [parseInt(`${userInfo?.storageLeft}`)],
-  //       backgroundColor: ['#df0d0d'],
-  //       borderColor: 'black',
-  //       borderWidth: 2,
-  //     },
-  //   ],
-  // };
-
-  // useEffect(() => {
-  //   if (userInfo?.videosLeft <= 0) {
-  //     toast.warn('Your videos limit is completed');
-  //   }
-  // }, [userInfo?.videosLeft]);
-
-  // useEffect(() => {
-  //   if (userInfo?.storageLeft <= 0) {
-  //     toast.warn('Your Storage limit is completed');
-  //   }
-  // }, [userInfo?.storageLeft]);
-
-  // const mobileWidth = IsMobileWidth();
-  // const classes = useStyle()
-  const [state, setState] = useState({
-    translateTo: 'English',
-    translateFrom: 'Arabic',
-  });
-  const onChange = (name, value) => {
-    setState({ ...state, [name]: value });
-  };
-
-  const storageLeft = (storage) => {
-    if (storage?.includes('1GB')) return 1000;
-    if (storage?.includes('MB'))
-      return Number(userInfo?.storageLeft.split('MB')[0]);
-  };
-  let str = JSON.parse(localStorage.getItem('user')).storageLeft;
-  console.log('str', str);
-  console.log(storageLeft(str), storageLeft(userInfo?.storageLeft));
-
-  // const data = [
-  //   ['Task', 'Hours per Day'],
-  //   ['Videos Remaining', userInfo?.videosLeft],
-  //   [
-  //     'Videos Used',
-  //     JSON.parse(localStorage.getItem('user')).videosLeft -
-  //       userInfo?.videosLeft,
-  //   ],
-  // ];
-
-  // const options = {
-  //   labels: ['Remaining', 'Total'],
-  //   datasets: [
-  //     {
-  //       label: '# of Votes',
-  //       data: [userInfo?.videosLeft, dataPlan.],
-  //       backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-  //       borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-  //       borderWidth: 1,
-  //     },
-  //   ],
-  // };
 
   return (
     <div
@@ -170,13 +94,8 @@ const DashboardContent = () => {
                 >
                   Video remaining
                 </strong>
-                <div
-                  style={{
-                    width: '250px',
-                    height: '250px',
-                    alignSelf: 'center',
-                  }}
-                >
+
+                <div className='graphContainer'>
                   <Doughnut
                     data={{
                       labels: ['Remaining', 'Total'],
@@ -204,7 +123,7 @@ const DashboardContent = () => {
                     textAlign: 'end',
                   }}
                 >
-                  userInfo?.videosLeft/{dataPlan.videosAllowed}
+                  {userInfo?.videosLeft}/{dataPlan.videosAllowed}
                 </strong>
               </div>
             </Grid>
@@ -226,13 +145,7 @@ const DashboardContent = () => {
                 >
                   Storage remaining
                 </strong>
-                <div
-                  style={{
-                    width: '250px',
-                    height: '250px',
-                    alignSelf: 'center',
-                  }}
-                >
+                <div className='graphContainer'>
                   <Doughnut
                     data={{
                       labels: ['Remaining', 'Total'],
@@ -299,10 +212,11 @@ const DashboardContent = () => {
                     Subscription plan
                   </strong>
                   <span>
-                    <b style={{ color: 'deeppink' }}>Current Plan</b>: Premium
+                    <b style={{ color: 'deeppink' }}>Current Plan</b>:{' '}
+                    {dataPlan.planName}
                   </span>
                   <span>
-                    <b style={{ color: 'deeppink' }}>Remaining days</b>: 12 days
+                    <b style={{ color: 'deeppink' }}>Remaining days</b>: ---
                   </span>
                 </div>
                 <div
@@ -311,14 +225,16 @@ const DashboardContent = () => {
                   <ReactSpeedometer
                     customSegmentStops={[0, 500, 750, 900, 1000]}
                     segmentColors={['firebrick', 'tomato', 'gold', 'limegreen']}
-                    value={333}
+                    value={userInfo?.storageLeft}
                   />
                 </div>
                 <div
+                  onClick={() => navigate('/dashboard/Subscriptions')}
                   style={{
                     height: '100%',
                     display: 'flex',
                     alignItems: 'end',
+                    cursor: 'pointer',
                   }}
                 >
                   <b style={{ color: 'deeppink' }}>Manage Subscription {'>'}</b>

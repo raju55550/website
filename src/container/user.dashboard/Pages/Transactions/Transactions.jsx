@@ -1,7 +1,7 @@
 import React from 'react';
 import './Transactions.css';
 // import { useStyle } from "./dashboard.content.style";
-import { Button } from "@mui/material";
+import { Button } from '@mui/material';
 import clsx from 'clsx';
 import { IsMobileWidth } from '../../../../components/common/utill/utils';
 import { useState } from 'react';
@@ -14,70 +14,89 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 import axios from 'axios';
-import API_BASE_URL from '../../../../utils/globals';
-
-
+import { API_BASE_URL } from '../../../../utils/globals';
 
 const Transactions = () => {
-    const mobileWidth = IsMobileWidth()
-   
-    const [payments, setPayments] = React.useState([]);
-    const [searchTerm, setSearchTerm] = React.useState('');
-    const [startDate, setStartDate] = React.useState('');
-    const [endDate, setEndDate] = React.useState('');
-  
-    const inputRef = React.useRef();
-  
-    const getAllPayments = async () => {
-      const { data } = await axios(
-            `http://localhost:5000/transactions/users`);
-      setPayments(data?.transactions);
-    };
+  const mobileWidth = IsMobileWidth();
 
+  const [payments, setPayments] = React.useState([]);
+  const [searchTerm, setSearchTerm] = React.useState('');
+  const [startDate, setStartDate] = React.useState('');
+  const [endDate, setEndDate] = React.useState('');
 
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user.token) {
-      axios.defaults.headers.common['authorization'] = `Bearer ${user.token}`;
-    }
-  
-    const fetchLatest = async () => {
-      const { data } = await axios.post(
-            `http://localhost:5000/transactions/users-filtered`,
-        {
-          startDate,
-          endDate,
-        }
-      );
-  
-      setPayments(data.filteredTransactions);
-    };
-  
-    React.useEffect(() => {
-      getAllPayments();
-    }, []);
-  
+  const inputRef = React.useRef();
 
+  const getAllPayments = async () => {
+    const { data } = await axios(`${API_BASE_URL}/transactions/users`);
+    setPayments(data?.transactions);
+  };
 
-    return (
-        <div className='dashboard-container w-100'>
-            {}
-            <div className={clsx(!mobileWidth && 'pl-4 pt-2 pb-2 pr-4', mobileWidth && 'pt-2 pb-2 pl-2')}>
-                <p className={clsx(mobileWidth && 'd-headingtop-res', !mobileWidth && 'pl-2', 'd-headingtop pt-2')}>Transactions</p>
-               <br></br>
-                <p className={clsx(mobileWidth && 'dub-title-res', 'dub-title')}>View all your previous transactions here</p>
-               <br></br>
-                <div className='table-con'>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col" className={clsx('th', mobileWidth && 'th-res')}>Plan Id	</th>
-                                <th scope="col" className={clsx('th', mobileWidth && 'th-res')}>Current Plan</th>
-                                <th scope="col" className={clsx('th', mobileWidth && 'th-res')}>Email</th>
-                                <th scope="col" className={clsx('th', mobileWidth && 'th-res')}>Amount</th>
-                                <th scope="col" className={clsx('th', mobileWidth && 'th-res')}>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody className='tablehead flex-1 sm:flex-none'>
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user.token) {
+    axios.defaults.headers.common['authorization'] = `Bearer ${user.token}`;
+  }
+
+  const fetchLatest = async () => {
+    const { data } = await axios.post(
+      `${API_BASE_URL}/transactions/users-filtered`,
+      {
+        startDate,
+        endDate,
+      }
+    );
+
+    setPayments(data.filteredTransactions);
+  };
+
+  React.useEffect(() => {
+    getAllPayments();
+  }, []);
+
+  return (
+    <div className='dashboard-container w-100'>
+      {}
+      <div
+        className={clsx(
+          !mobileWidth && 'pl-4 pt-2 pb-2 pr-4',
+          mobileWidth && 'pt-2 pb-2 pl-2'
+        )}
+      >
+        <p
+          className={clsx(
+            mobileWidth && 'd-headingtop-res',
+            !mobileWidth && 'pl-2',
+            'd-headingtop pt-2'
+          )}
+        >
+          Transactions
+        </p>
+        <br></br>
+        <p className={clsx(mobileWidth && 'dub-title-res', 'dub-title')}>
+          View all your previous transactions here
+        </p>
+        <br></br>
+        <div className='table-con'>
+          <table class='table'>
+            <thead>
+              <tr>
+                <th scope='col' className={clsx('th', mobileWidth && 'th-res')}>
+                  Plan Id{' '}
+                </th>
+                <th scope='col' className={clsx('th', mobileWidth && 'th-res')}>
+                  Current Plan
+                </th>
+                <th scope='col' className={clsx('th', mobileWidth && 'th-res')}>
+                  Email
+                </th>
+                <th scope='col' className={clsx('th', mobileWidth && 'th-res')}>
+                  Amount
+                </th>
+                <th scope='col' className={clsx('th', mobileWidth && 'th-res')}>
+                  Date
+                </th>
+              </tr>
+            </thead>
+            <tbody className='tablehead flex-1 sm:flex-none'>
               {payments
                 ?.filter((val) => {
                   if (searchTerm === '') {
@@ -114,14 +133,11 @@ const Transactions = () => {
                   );
                 })}
             </tbody>
-
-                    </table>
-                </div>
-                
-                
-            </div>
+          </table>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Transactions
+export default Transactions;

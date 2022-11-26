@@ -16,6 +16,7 @@ import {
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../redux/user/userReducer';
+import { API_BASE_URL } from '../../utils/globals';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -26,7 +27,7 @@ const LoginPage = () => {
     evt.preventDefault();
     if (evt.type === 'click') {
       await axios
-        .post(`http://localhost:5000/login`, {
+        .post(`${API_BASE_URL}/login`, {
           email,
           password,
         })

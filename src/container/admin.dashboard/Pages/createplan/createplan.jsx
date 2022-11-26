@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { API_BASE_URL } from '../../../../utils/globals';
 import './createplan.css';
 
 const initState = {
@@ -25,7 +26,7 @@ const CreatePlan = () => {
   const allStatuses = ['Guest', 'Free', 'Active', 'Inactive'];
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/plans/single/${id}`).then((res) => {
+      axios.get(`${API_BASE_URL}/plans/single/${id}`).then((res) => {
         const tempData = {};
         Object.keys(initState).forEach((i) => {
           tempData[i] = res.data.plan[i];
@@ -54,11 +55,11 @@ const CreatePlan = () => {
     }
     try {
       if (id) {
-        await axios.patch(`http://localhost:5000/plans/update/${id}`, planData);
+        await axios.patch(`${API_BASE_URL}/plans/update/${id}`, planData);
         alert('Plan Updated');
         navigate('/admin-dashboard/user-plan');
       } else {
-        await axios.post('http://localhost:5000/plans/create', planData);
+        await axios.post(`${API_BASE_URL}/plans/create`, planData);
         alert('Plan Created');
         setPlanData(initState);
       }

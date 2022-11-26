@@ -25,7 +25,7 @@ import { PayPalButton } from 'react-paypal-button-v2';
 import { FormattedMessage } from 'react-intl';
 import InjectIntl from 'react-intl-inject';
 
-import API_BASE_URL from '../../utils/globals';
+import { API_BASE_URL } from '../../utils/globals';
 
 const RegisterPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -47,7 +47,7 @@ const RegisterPage = () => {
   };
 
   const fetchAllPlansData = async () => {
-    const { data } = await axios(`http://localhost:5000/plans/`);
+    const { data } = await axios(`${API_BASE_URL}/plans/`);
     setPlans(data.plans);
   };
   useEffect(() => {
@@ -103,7 +103,7 @@ const RegisterPage = () => {
     if (details.status === 'COMPLETED') {
       setSdkReady(false);
       alert('Done');
-      await axios.post(`http://localhost:5000/transactions`, transactionsData);
+      await axios.post(`${API_BASE_URL}/transactions`, transactionsData);
       navigate('/login');
     }
   };
@@ -125,7 +125,7 @@ const RegisterPage = () => {
       otherId,
     };
 
-    await axios.post(`http://localhost:5000/createaccount`, data);
+    await axios.post(`${API_BASE_URL}/createaccount`, data);
 
     if (selectedPlan == 0 || selectedPlan === 'Free Plan') {
       navigate('/login');

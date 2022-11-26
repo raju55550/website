@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import './UserPlan.css';
+import { API_BASE_URL } from '../../../../utils/globals';
 
 const UserPlan = () => {
   const navigate = useNavigate();
@@ -23,12 +24,12 @@ const UserPlan = () => {
   });
 
   const fetchAllPlansData = async () => {
-    const { data } = await axios('http://localhost:5000/plans/');
+    const { data } = await axios(`${API_BASE_URL}/plans/`);
     setPlans(data?.plans);
   };
 
   const deletePlan = async (id) => {
-    await axios.delete(`http://localhost:5000/plans/update/${id}`);
+    await axios.delete(`${API_BASE_URL}/plans/update/${id}`);
     setDeleteOpen({
       status: false,
       id: null,
@@ -37,7 +38,7 @@ const UserPlan = () => {
   };
 
   const fetchLatest = async () => {
-    const { data } = await axios.post('http://localhost:5000/plans/all', {
+    const { data } = await axios.post(`${API_BASE_URL}/plans/all`, {
       startDate,
       endDate,
     });

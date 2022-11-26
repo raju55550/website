@@ -15,6 +15,7 @@ import Select from '@mui/material/Select';
 
 import axios from 'axios';
 import { Chart, Doughnut } from 'react-chartjs-2';
+import { API_BASE_URL } from '../../../../utils/globals';
 
 const DashboardContent = () => {
   const mobileWidth = IsMobileWidth();
@@ -29,7 +30,7 @@ const DashboardContent = () => {
   const [numberOfUsers, setNumberOfUsers] = useState(null);
   const [numberOfVideos, setNumberOfVideos] = useState(null);
   const getAllUsers = async () => {
-    const { data } = await axios('http://localhost:5000/auth/count');
+    const { data } = await axios(`${API_BASE_URL}/auth/count`);
     setNumberOfUsers(data.totalUsers);
     setNumberOfVideos(data.totalVideos);
   };

@@ -1,6 +1,7 @@
 import { Grid, Switch } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../../../../utils/globals';
 import PackageBox from './PackageBox';
 import './Pricing.css';
 
@@ -8,7 +9,7 @@ const Pricing = () => {
   const [plans, setPlans] = useState([]);
 
   const fetchAllPlansData = async () => {
-    const { data } = await axios('http://localhost:5000/plans/');
+    const { data } = await axios(`${API_BASE_URL}/plans/`);
     console.log(data);
     setPlans(data.plans);
   };
