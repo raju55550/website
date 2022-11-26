@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema(
   {
@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema(
     image: String,
     role: {
       type: String,
-      default: "user",
+      default: 'user',
     },
     token: {
       type: String,
@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema(
     app_name: [{ type: String }],
     otherId: {
       type: mongoose.Types.ObjectId,
-      ref: "Plan",
+      ref: 'Plan',
     },
   },
 
@@ -41,8 +41,8 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-userSchema.pre("save", async function () {
-  if (!this.isModified("password")) return;
+userSchema.pre('save', async function () {
+  if (!this.isModified('password')) return;
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
@@ -50,4 +50,4 @@ userSchema.pre("save", async function () {
 userSchema.methods.comparePassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model('User', userSchema);
